@@ -1,17 +1,22 @@
 # 🌟 Curly Bracket Scope Highlighter
 
-🔍 A VS Code extension that highlights nested code scopes with a smooth gradient overlay, enhancing code readability.
+🔍 A VS Code extension that highlights nested code scopes with a dynamic gradient overlay, enhancing code readability. Now featuring:
+
+- **Dynamic Gradient Highlighting:** The deeper the code nesting, the lighter the highlight becomes.
+- **Enhanced Dictionary & JSON Separation:** Visually distinguishes nested dictionaries and JSON objects for clearer data structure visualization.
+- **Improved Visual Orientation:** Helps you quickly orient yourself in deeply nested code blocks by using gradient highlights.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Aleksandr51r/VSCE-Curly-Bracket-Scope-Highlighter/main/assets/DEMOd.png" width="700"  height="600" style="margin-right: 50px;">
-  <img src="https://raw.githubusercontent.com/Aleksandr51r/VSCE-Curly-Bracket-Scope-Highlighter/main/assets/DEMOw.png" width="700"  height="600">
+  <img src="https://raw.githubusercontent.com/Aleksandr51r/VSCE-Curly-Bracket-Scope-Highlighter/main/assets/DEMOd.png" width="700" height="600" style="margin-right: 50px;">
+  <img src="https://raw.githubusercontent.com/Aleksandr51r/VSCE-Curly-Bracket-Scope-Highlighter/main/assets/DEMOw.png" width="700" height="600">
 </p>
 
 ## ✨ Features
 
-✅ **Scope Highlighting** – Highlights nested code blocks dynamically.  
-✅ **Gradient Overlay** – Uses a subtle gradient effect for better readability.  
-✅ **Customizable** – Adjust colors and intensity in settings.
+✅ **Dynamic Gradient Highlighting** – Highlights nested code blocks with a gradient that lightens as the nesting increases.  
+✅ **Enhanced Dictionary & JSON Separation** – Clearly distinguishes nested dictionaries and JSON objects, making data structures easier to read.  
+✅ **Improved Visual Orientation** – Visual gradient highlights make it easier to orient yourself in deeply nested code and distinguish between different blocks.  
+✅ **Customizable** – Easily adjust colors, opacity settings in VS Code (`Ctrl+,`).
 
 ## 🛠 Installation
 
@@ -22,12 +27,11 @@
 
 👉 Or install directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=YourPublisher.CurlyBracketScopeHighlighter).
 
-The scopes will be highlighted.
+The scopes will be highlighted as you work, helping you quickly understand your code’s structure.
 
 ## ⚙️ Configuration
 
-You can customize the extension settings in **VS Code Settings** (`Ctrl+,`).  
-And add to settings.json :
+Customize the extension settings in **VS Code Settings** (`Ctrl+,`) or add the following to your `settings.json`:
 
 ```json
 {
@@ -36,9 +40,9 @@ And add to settings.json :
 }
 ```
 
-🔹 Tip: You can adjust these values in Settings (Ctrl+,) > Extensions > Curly Bracket Scope Highlighter.
-
 ## 🛠 Contributing
+
+[gitHub][https://github.com/Aleksandr51r/VSCE-Curly-Bracket-Scope-Highlighter]
 
 This is an **open-source project**, and contributions are welcome! 🎉
 
@@ -59,5 +63,3 @@ Check out the [Contributing Guide](CONTRIBUTING.md) for details.
 [MIT](LICENSE)
 
 ---
-
-🚀 Improve your coding experience with **Curly Bracket Scope Highlighter**!

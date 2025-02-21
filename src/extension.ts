@@ -1,7 +1,5 @@
 import * as vscode from "vscode"
 
-
-
 export function activate(context: vscode.ExtensionContext) {
   console.log("Curly Scope Highlighter Activated!")
 
@@ -10,7 +8,9 @@ export function activate(context: vscode.ExtensionContext) {
 
   const SUPPORTED_LANGUAGES = [
     "javascript",
+    "javascriptreact",
     "typescript",
+    "typescriptreact",
     "java",
     "c",
     "cpp",
@@ -101,35 +101,67 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 //  ! Finding all nested { blocks }
-
 export function findAllBlockRanges(
   document: vscode.TextDocument
 ): vscode.Range[] {
   const text = document.getText()
   const ranges: vscode.Range[] = []
-  const stack: number[] = [] // Стек позиций '{'
+  const stack: number[] = [] // Стек позиций
 
   for (let i = 0; i < text.length; i++) {
     if (text[i] === "{") {
       stack.push(i + 1) // Начало диапазона после {
     } else if (text[i] === "}") {
       if (stack.length > 0) {
-        const start = stack.pop()! + 2
-        let end = i - 1
-
-        // Отодвигаем end назад, чтобы не включать }
-        while (end > 0 && /\s/.test(text[end])) {
-          end--
+        const start = stack.pop()!
+        const startPosition = document.positionAt(start) // Начало диапазона
+        const endPosition = document.positionAt(i) // Конец диапазона
+        // Проверяем, что `{` и `}` не на одной строке
+        if (startPosition.line !== endPosition.line) {
+          let end = i - 1
+          // Отодвигаем end назад, чтобы не включать '}'
+          while (end > 0 && /\s/.test(text[end])) {
+            end--
+          }
+          // Сдвигаем start и end, чтобы не захватывать сами скобки
+          const finalStartPosition = document.positionAt(start + 1)
+          const finalEndPosition = document.positionAt(end)
+          ranges.push(new vscode.Range(finalStartPosition, finalEndPosition))
         }
-
-        const startPosition = document.positionAt(start)
-        const endPosition = document.positionAt(end + 1) // +1, чтобы не терять последний символ перед }
-        ranges.push(new vscode.Range(startPosition, endPosition))
       }
     }
   }
 
   return ranges
 }
+
+// export function findAllBlockRanges(
+//   document: vscode.TextDocument
+// ): vscode.Range[] {
+//   const text = document.getText()
+//   const ranges: vscode.Range[] = []
+//   const stack: number[] = [] // Стек позиций '{'
+
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i] === "{") {
+//       stack.push(i + 1) // Начало диапазона после
+//     } else if (text[i] === "}") {
+//       if (stack.length > 0) {
+//         const start = stack.pop()! + 2
+//         let end = i - 1
+//         // Отодвигаем end назад, чтобы не включать
+//         while (end > 0 && /\s/.test(text[end])) {
+//           end--
+//         }
+
+//         const startPosition = document.positionAt(start)
+//         const endPosition = document.positionAt(end + 1) // +1, чтобы не терять последний символ перед }
+//         ranges.push(new vscode.Range(startPosition, endPosition))
+//       }
+//     }
+//   }
+
+//   return ranges
+// }
 
 export function deactivate() {}

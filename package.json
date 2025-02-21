@@ -1,20 +1,25 @@
 {
   "name": "curly-scope-highlighter",
   "displayName": "Curly Bracket Scope Highlighter",
+  "icon": "icon.png",
   "description": "Visual Studio Code extension that highlights nested code scopes with a gradient overlay, making code structure more readable.",
   "version": "1.0.0",
+  "publisher": "Aleksandr-dev",
   "engines": {
-    "vscode": "^1.80.0"
+    "vscode": "^1.97.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [
     "onLanguage:javascript",
+    "onLanguage:javascriptreact",
     "onLanguage:typescript",
+    "onLanguage:typescriptreact",
     "onLanguage:java",
     "onLanguage:c",
     "onLanguage:cpp",
-    "onLanguage:csharp",
-    "onLanguage:python"
+    "onLanguage:csharp"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -72,5 +77,9 @@
     "npm-run-all": "^4.1.5",
     "typescript": "^5.7.3",
     "vscode-test": "^1.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aleksandr51r/VSCE-Curly-Bracket-Scope-Highlighter"
   }
 }
