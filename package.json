@@ -19,7 +19,8 @@
     "onLanguage:java",
     "onLanguage:c",
     "onLanguage:cpp",
-    "onLanguage:csharp"
+    "onLanguage:csharp",
+    "onLanguage:go"
   ],
   "main": "./dist/extension.js",
   "contributes": {
