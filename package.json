@@ -44,6 +44,23 @@
           "minimum": 0,
           "maximum": 1,
           "description": "Highlight opacity (0 - fully transparent, 1 - fully opaque)."
+        },
+        "curly-scope-highlighter.enableVerticalScope": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable vertical scope highlighting for curly brackets."
+        },
+        "curly-scope-highlighter.verticalScopeColor": {
+          "type": "string",
+          "default": "0, 150, 150",
+          "description": "RGB color for vertical scope highlighting (e.g., '255, 0, 0' for red)."
+        },
+        "curly-scope-highlighter.verticalScopeOpacity": {
+          "type": "number",
+          "default": 0.3,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Vertical scope highlight opacity (0 - fully transparent, 1 - fully opaque)."
         }
       }
     }
