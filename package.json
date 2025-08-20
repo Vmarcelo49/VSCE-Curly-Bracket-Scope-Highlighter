@@ -2,7 +2,7 @@
   "name": "curly-scope-highlighter",
   "displayName": "Curly Bracket Scope Highlighter",
   "icon": "icon.png",
-  "description": "Visual Studio Code extension that highlights nested code scopes with a gradient overlay for all popular languages that use curly brackets, making code structure more readable.",
+  "description": "Visual Studio Code extension that highlights nested code scopes with a gradient overlay, making code structure more readable.",
   "version": "1.0.0",
   "publisher": "Aleksandr-dev",
   "engines": {
@@ -20,27 +20,7 @@
     "onLanguage:c",
     "onLanguage:cpp",
     "onLanguage:csharp",
-    "onLanguage:go",
-    "onLanguage:php",
-    "onLanguage:rust",
-    "onLanguage:kotlin",
-    "onLanguage:swift",
-    "onLanguage:scala",
-    "onLanguage:perl",
-    "onLanguage:ruby",
-    "onLanguage:json",
-    "onLanguage:jsonc",
-    "onLanguage:css",
-    "onLanguage:scss",
-    "onLanguage:sass",
-    "onLanguage:less",
-    "onLanguage:dart",
-    "onLanguage:objective-c",
-    "onLanguage:objective-cpp",
-    "onLanguage:groovy",
-    "onLanguage:haxe",
-    "onLanguage:glsl",
-    "onLanguage:hlsl"
+    "onLanguage:go"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -64,23 +44,6 @@
           "minimum": 0,
           "maximum": 1,
           "description": "Highlight opacity (0 - fully transparent, 1 - fully opaque)."
-        },
-        "curly-scope-highlighter.enableVerticalScope": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable vertical scope highlighting for curly brackets."
-        },
-        "curly-scope-highlighter.verticalScopeColor": {
-          "type": "string",
-          "default": "0, 150, 150",
-          "description": "RGB color for vertical scope highlighting (e.g., '255, 0, 0' for red)."
-        },
-        "curly-scope-highlighter.verticalScopeOpacity": {
-          "type": "number",
-          "default": 0.3,
-          "minimum": 0,
-          "maximum": 1,
-          "description": "Vertical scope highlight opacity (0 - fully transparent, 1 - fully opaque)."
         }
       }
     }
